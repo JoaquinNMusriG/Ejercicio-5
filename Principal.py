@@ -14,7 +14,7 @@ def mostrarFormato(lista):
         else:
             print('Division inválida.')
     else:
-        print('Es inválido no ingresar nada.')
+        print('Es inválido lo ingresado.')
 
 def modificarInasPerm(lista):
     nuevaAsist = input('Ingrese el nuevo valor de inasistencias permitidas para los alumnos: ')
@@ -47,6 +47,11 @@ if __name__ == '__main__':
         print("0 Salir")
         print("1 Ingresar un año y división, y liste nombre y porcentaje de inasistencias de los alumnos cuya cantidad de inasistencias supera la cantidad máxima de inasistencias permitidas.")
         print("2 Modificar la cantidad máxima de inasistencias permitidas.")
-        opcion= int(input("Ingrese una opción: "))
-        switch(opcion,listaAlumnos)
+        opcion= (input("Ingrese una opción: "))
+        if (opcion.isdigit()):
+            opcion = int(opcion)
+            switch(opcion,listaAlumnos)
+        else:
+            print('Opcion incorrecta.')
+            opcion = 1
         bandera = int(opcion)==0

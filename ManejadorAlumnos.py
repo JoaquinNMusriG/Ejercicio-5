@@ -18,10 +18,9 @@ class ManejadorAlumnos:
             print(lista)
 
     def listarAlumnos(self, anio, division):
-           cantidadClases = Alumno.getCantTotClases()
            inasistPerm = Alumno.getInasistPerm()
            print('Alumno       Porcentaje de Inasistencias')
            for alum in self.__listaAlumno:
                if (alum.getAnio() == anio) & (alum.getDivision() == division):
                    if (alum.getInasistencias() > int(inasistPerm)):
-                       print('{:10}   {:10}%'.format(alum.getNombre(),float((alum.getInasistencias()*100)/cantidadClases)))
+                       print('{:10}   {:10}%'.format(alum.getNombre(),float((alum.getInasistencias()*100)/inasistPerm)))
